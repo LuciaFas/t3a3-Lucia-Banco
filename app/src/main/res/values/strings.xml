@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Banco-LuFaGa</string>
+    <string name="bienvenido">Bienvenido/a</string>
+    <string name="iniciar_sesion">Iniciar sesión</string>
+    <string name="introduce_el_usuario">Introduce el usuario</string>
+    <string name="introduce_la_contrasenya">Introduce la contraseña</string>
+    <string name="entrar">Entrar</string>
+    <string name="salir">Salir</string>
+</resources>
