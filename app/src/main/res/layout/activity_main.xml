@@ -10,16 +10,13 @@
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/cardview_bienvenido"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginTop="32dp">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
 
             <ImageView
                 android:id="@+id/imagen"
@@ -42,17 +39,85 @@
                 android:id="@+id/txtview"
                 android:text="@string/bienvenido"
                 android:textSize="20sp"
-                android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/imagen"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginStart="32dp"
+                android:layout_marginStart="150dp"
                 android:layout_marginTop="16dp">
 
             </TextView>
-        </androidx.constraintlayout.widget.ConstraintLayout>
+
     </com.google.android.material.card.MaterialCardView>
-    
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/cardview_bienvenido"
+        app:layout_constraintStart_toStartOf="@+id/cardview_bienvenido"
+        app:layout_constraintEnd_toEndOf="@+id/cardview_bienvenido"
+        android:layout_marginTop="32dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:padding="10dp">
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/posicion_global"
+                android:id="@+id/btnPosicion"
+                android:layout_gravity="center_horizontal"
+                android:drawableLeft="@drawable/ic_wifi"
+                android:drawableTint="@color/white"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/movimientos"
+                android:id="@+id/btnMovimientos"
+                android:drawableLeft="@drawable/ic_movimiento"
+                android:drawableTint="@color/white"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/transferencias"
+                android:id="@+id/btnTransferencias"
+                android:drawableLeft="@drawable/ic_trans"
+                android:drawableTint="@color/white"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/cambiar_contrasenya"
+                android:id="@+id/btnCambContr"
+                android:drawableLeft="@drawable/ic_edit"
+                android:drawableTint="@color/white"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/promociones"
+                android:id="@+id/btnPromo"
+                android:drawableLeft="@drawable/ic_dinero"
+                android:drawableTint="@color/white"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/cajeros"
+                android:id="@+id/btnCajero"
+                android:drawableLeft="@drawable/ic_map"
+                android:drawableTint="@color/white"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/salir"
+                android:id="@+id/btnVolver"
+                android:drawableLeft="@drawable/ic_salir"
+                android:drawableTint="@color/white"/>
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">

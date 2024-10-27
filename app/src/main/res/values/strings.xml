@@ -6,4 +6,17 @@
     <string name="introduce_la_contrasenya">Introduce la contraseña</string>
     <string name="entrar">Entrar</string>
     <string name="salir">Salir</string>
+    <string name="posicion_global">Posicion Global</string>
+    <string name="movimientos">Movimientos</string>
+    <string name="transferencias">Transferencias</string>
+    <string name="cambiar_contrasenya">Cambiar Contraseña</string>
+    <string name="promociones">Promociones</string>
+    <string name="cajeros">Cajeros</string>
+    <string name="bienvenida_banco">Bienvenida/o a mi banco</string>
+    <string name="obligatorio">Obligatorio</string>
+    <string name="contrasenya_actual">Contraseña actual</string>
+    <string name="contrasenya_nueva">Contraseña Nueva</string>
+    <string name="repite_la_contrasenya">Repite la Contraseña</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="cancelar">Cancelar</string>
 </resources>

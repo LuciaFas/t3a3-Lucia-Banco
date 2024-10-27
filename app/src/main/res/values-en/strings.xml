@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Banco-LuFaGa</string>
+    <string name="bienvenido">Welcome</string>
+    <string name="iniciar_sesion">Login</string>
+    <string name="introduce_el_usuario">Enter the user</string>
+    <string name="introduce_la_contrasenya">Enter the password</string>
+    <string name="entrar">Enter</string>
+    <string name="salir">Exit</string>
+    <string name="posicion_global">Global Position</string>
+    <string name="movimientos">Movements</string>
+    <string name="transferencias">Transfers</string>
+    <string name="cambiar_contrasenya">Change Password</string>
+    <string name="promociones">Promotions</string>
+    <string name="cajeros">ATMs</string>
+    <string name="bienvenida_banco">Welcome to my bank</string>
+    <string name="obligatorio">Obligatory</string>
+    <string name="contrasenya_actual">Current Password</string>
+    <string name="contrasenya_nueva">New Password</string>
+    <string name="repite_la_contrasenya">Repeat the Password</string>
+    <string name="aceptar">Accept</string>
+    <string name="cancelar">Cancel</string>
+</resources>

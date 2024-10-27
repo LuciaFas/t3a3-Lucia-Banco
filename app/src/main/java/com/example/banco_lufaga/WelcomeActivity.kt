@@ -6,30 +6,26 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.banco_lufaga.databinding.ActivityMainBinding
+import com.example.banco_lufaga.databinding.ActivityWelcomeBinding
+import com.airbnb.lottie.LottieAnimationView
+import com.airbnb.lottie.LottieDrawable
 
-class MainActivity : AppCompatActivity() {
-
-    private lateinit var binding: ActivityMainBinding
+class WelcomeActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityWelcomeBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityWelcomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val dni = intent.getStringExtra("Usuario")
-
-        binding.txtview.text = binding.txtview.text.toString() + "\n " + dni
-
-        binding.btnVolver.setOnClickListener {
+        binding.botonEntrar.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
 
-        binding.btnCambContr.setOnClickListener {
-            val intent = Intent(this, ChangePasswordActivity::class.java)
-            startActivity(intent)
-        }
+        val animationView = findViewById<LottieAnimationView>(R.id.animation)
+        animationView.setAnimation(R.raw.money_animation)
+        animationView.playAnimation()
+        animationView.repeatCount = LottieDrawable.INFINITE
 
         enableEdgeToEdge()
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->

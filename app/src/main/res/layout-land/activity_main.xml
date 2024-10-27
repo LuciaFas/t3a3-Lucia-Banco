@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cardview_bienvenido"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:id="@+id/imagen"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/perfil"
+            android:paddingBottom="6dp"
+            android:paddingStart="6dp"
+            android:paddingTop="6dp"
+            android:paddingEnd="6dp">
+
+        </ImageView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtview"
+            android:text="@string/bienvenido"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/imagen"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="250dp"
+            android:layout_marginTop="16dp">
+
+        </TextView>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/cardview_bienvenido"
+        app:layout_constraintStart_toStartOf="@+id/cardview_bienvenido"
+        app:layout_constraintEnd_toEndOf="@+id/cardview_bienvenido"
+        android:layout_marginTop="16dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/table_bienvenido"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_margin="16dp"
+                android:stretchColumns="*">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/posicion_global"
+                        android:id="@+id/btnPosicion"
+                        android:textSize="20sp"
+                        android:drawableLeft="@drawable/ic_wifi"
+                        android:drawableTint="@color/white">
+                    </Button>
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/movimientos"
+                        android:id="@+id/btnMovimientos"
+                        android:textSize="20sp"
+                        android:drawableLeft="@drawable/ic_movimiento"
+                        android:drawableTint="@color/white"/>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/transferencias"
+                        android:id="@+id/btnTransferencias"
+                        android:textSize="20sp"
+                        android:drawableLeft="@drawable/ic_trans"
+                        android:drawableTint="@color/white"/>
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/cambiar_contrasenya"
+                        android:id="@+id/btnCambContr"
+                        android:textSize="20sp"
+                        android:drawableLeft="@drawable/ic_edit"
+                        android:drawableTint="@color/white"/>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/promociones"
+                        android:id="@+id/btnPromo"
+                        android:textSize="20sp"
+                        android:drawableLeft="@drawable/ic_dinero"
+                        android:drawableTint="@color/white"/>
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/cajeros"
+                        android:id="@+id/btnCajero"
+                        android:textSize="20sp"
+                        android:drawableLeft="@drawable/ic_map"
+                        android:drawableTint="@color/white"/>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/salir"
+                        android:id="@+id/btnVolver"
+                        android:textSize="20sp"
+                        android:drawableLeft="@drawable/ic_salir"
+                        android:drawableTint="@color/white"/>
+                </TableRow>
+
+            </TableLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/navigationBar"
+            android:layout_gravity="bottom"
+            style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
+            app:navigationIcon="@drawable/ic_menu"
+            app:navigationIconTint="@android:color/white">
+
+        </com.google.android.material.bottomappbar.BottomAppBar>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_bank"
+            app:layout_anchor="@id/navigationBar">
+
+        </com.google.android.material.floatingactionbutton.FloatingActionButton>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
