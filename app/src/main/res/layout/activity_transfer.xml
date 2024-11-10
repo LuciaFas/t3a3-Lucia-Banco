@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtTrans"
+        android:text="@string/transferencias"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="32dp"
+        style="@style/MyTheme.Title">
+
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_elige_cuenta"
+        android:text="@string/elige_tu_cuenta"
+        app:layout_constraintTop_toBottomOf="@+id/txtTrans"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        style="@style/MyTheme.Small">
+
+    </TextView>
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sp_cuentas"
+        app:layout_constraintTop_toBottomOf="@+id/txt_elige_cuenta"
+        app:layout_constraintStart_toStartOf="@+id/txt_elige_cuenta"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp">
+
+    </Spinner>
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/radiogroup"
+        app:layout_constraintTop_toBottomOf="@id/sp_cuentas"
+        app:layout_constraintStart_toStartOf="@+id/sp_cuentas"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="26dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rdbtn_propia"
+            android:text="@string/cuenta_propia"
+            android:paddingEnd="15dp"
+            style="@style/MyTheme.Small" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rdbtn_ajena"
+            android:text="@string/cuenta_ajena"
+            android:layout_marginStart="10dp"
+            style="@style/MyTheme.Small" />
+
+    </RadioGroup>
+
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sp_rdb"
+        app:layout_constraintTop_toBottomOf="@+id/radiogroup"
+        app:layout_constraintStart_toStartOf="@+id/txt_elige_cuenta"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="26dp"
+        android:visibility="invisible">
+
+    </Spinner>
+
+    <EditText
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/edit_text_rdb"
+        app:layout_constraintTop_toBottomOf="@+id/radiogroup"
+        app:layout_constraintStart_toStartOf="@+id/txt_elige_cuenta"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="26dp"
+        android:hint="@string/escribe_el_num"
+        style="@style/MyTheme.Small"
+        android:textAlignment="center"
+        android:visibility="invisible">
+
+    </EditText>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_cantidad"
+        app:layout_constraintTop_toBottomOf="@id/edit_text_rdb"
+        app:layout_constraintStart_toStartOf="@id/txt_elige_cuenta"
+        android:text="@string/cantidad"
+        style="@style/MyTheme.Small"
+        android:layout_marginTop="55dp">
+
+    </TextView>
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@id/edit_text_cant"
+        app:layout_constraintStart_toEndOf="@+id/txt_cantidad"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_cantidad"
+        android:layout_marginStart="10dp">
+
+    </EditText>
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spDivisa"
+        app:layout_constraintStart_toEndOf="@+id/edit_text_cant"
+        app:layout_constraintBottom_toBottomOf="@id/edit_text_cant">
+
+    </Spinner>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cb_justificante"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_cant"
+        app:layout_constraintStart_toStartOf="@+id/edit_text_cant"
+        android:text="@string/enviar_justificante"
+        style="@style/MyTheme.Small"
+        android:layout_marginTop="32dp">
+
+    </CheckBox>
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnEnviar"
+        android:text="@string/enviar"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="36dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cb_justificante">
+
+    </Button>
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnCancelar"
+        android:text="@string/cancelar"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="36dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnEnviar"
+        app:layout_constraintTop_toBottomOf="@id/cb_justificante"
+        style="@style/MyTheme.ButtonRed">
+
+    </Button>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
