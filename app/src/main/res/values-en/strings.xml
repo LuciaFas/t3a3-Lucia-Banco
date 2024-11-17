@@ -26,10 +26,14 @@
     <string name="escribe_el_num">Write the other number account</string>
     <string name="enviar_justificante">Send Proof</string>
     <string name="enviar">Send</string>
-    <string-array name="cuentas">
-        <item>ES91-2100-0418-4502-0005</item>
-        <item>ES78-0049-1500-9912-3456</item>
-        <item>ES45-2077-0098-1234-5678</item>
-        <item>ES56-2080-1122-3344-5566</item>
+    <string name="cuentas">Accounts:</string>
+    <string name="selecciona_la_cuenta">Choose the account:</string>
+    <string name="ultimos_movimientos">Last Movements:</string>
+    <string-array name="divisa">
+        <item>$</item>
+        <item>€</item>
+        <item>¥</item>
+        <item>£</item>
+        <item>₩</item>
     </string-array>
 </resources>

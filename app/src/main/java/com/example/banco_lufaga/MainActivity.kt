@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.banco_lufaga.databinding.ActivityMainBinding
+import com.example.banco_lufaga.pojo.Cliente
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,12 +15,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        val cliente:Cliente = intent.getSerializableExtra("Cliente") as Cliente
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val dni = intent.getStringExtra("Usuario")
-
-        binding.txtview.text = binding.txtview.text.toString() + "\n " + dni
+        binding.txtview.text = binding.txtview.text.toString() + "\n " + cliente.getNif()
 
         binding.btnVolver.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
@@ -28,11 +29,25 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnCambContr.setOnClickListener {
             val intent = Intent(this, ChangePasswordActivity::class.java)
+            intent.putExtra("Cliente", cliente)
             startActivity(intent)
         }
 
         binding.btnTransferencias.setOnClickListener {
             val intent = Intent(this, TransferActivity::class.java)
+            intent.putExtra("Cliente", cliente)
+            startActivity(intent)
+        }
+
+        binding.btnPosicion.setOnClickListener {
+            val intent = Intent(this, GlobalPositionActivity::class.java)
+            intent.putExtra("Cliente", cliente)
+            startActivity(intent)
+        }
+
+        binding.btnMovimientos.setOnClickListener {
+            val intent = Intent(this, MovementsActivity::class.java)
+            intent.putExtra("Cliente", cliente)
             startActivity(intent)
         }
 

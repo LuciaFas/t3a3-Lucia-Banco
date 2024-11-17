@@ -10,8 +10,11 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.banco_lufaga.bd.MiBancoOperacional
 import com.example.banco_lufaga.databinding.ActivityMainBinding
 import com.example.banco_lufaga.databinding.ActivityTransferBinding
+import com.example.banco_lufaga.pojo.Cliente
+import com.example.banco_lufaga.pojo.Cuenta
 
 class TransferActivity : AppCompatActivity() {
     private lateinit var binding: ActivityTransferBinding
@@ -21,10 +24,13 @@ class TransferActivity : AppCompatActivity() {
         binding = ActivityTransferBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val mbo: MiBancoOperacional? = MiBancoOperacional.getInstance(this)
+        val cliente: Cliente = intent.getSerializableExtra("Cliente") as Cliente
+
         val spCuentas:Spinner = binding.spCuentas
         val spRdb:Spinner = binding.spRdb
 
-        val cuentas = resources.getStringArray(R.array.cuentas)
+        val cuentas: ArrayList<Cuenta> = mbo?.getCuentas(cliente) as ArrayList<Cuenta>
 
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, cuentas)
 

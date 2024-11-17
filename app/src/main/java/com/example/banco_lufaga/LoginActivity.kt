@@ -3,11 +3,14 @@ package com.example.banco_lufaga
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.banco_lufaga.databinding.ActivityLoginBinding
+import com.example.banco_lufaga.bd.MiBancoOperacional
+import com.example.banco_lufaga.pojo.Cliente
 
 class LoginActivity : AppCompatActivity() {
 
@@ -16,6 +19,8 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val mbo: MiBancoOperacional? = MiBancoOperacional.getInstance(this)
 
         binding.botonEntrar.setOnClickListener {
             val textoUsuario = binding.txtUsuario.text.toString()
@@ -30,9 +35,20 @@ class LoginActivity : AppCompatActivity() {
             }
 
             if (textoUsuario.isNotEmpty() && textoCont.isNotEmpty()) {
-                val intent = Intent(this, MainActivity::class.java)
-                intent.putExtra("Usuario", binding.txtUsuario.text.toString())
-                startActivity(intent)
+                var cliente = Cliente()
+                cliente.setNif(textoUsuario)
+                cliente.setClaveSeguridad(textoCont)
+
+                val resultado = mbo?.login(cliente) ?: -1
+                if(resultado == -1) {
+                    Toast.makeText(this@LoginActivity, "Datos erróneos, el cliente no se ha podido loguear", Toast.LENGTH_SHORT).show()
+                } else {
+                    cliente = mbo?.login(cliente)!!
+                    val intent = Intent(this, MainActivity::class.java)
+                    intent.putExtra("Cliente", cliente)
+                    startActivity(intent)
+                }
+
             }
         }
 
