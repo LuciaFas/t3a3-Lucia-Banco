@@ -13,11 +13,14 @@ import com.example.banco_lufaga.pojo.Cliente
 import com.example.banco_lufaga.pojo.Cuenta
 import android.widget.AdapterView
 import android.view.View
+import androidx.recyclerview.widget.DividerItemDecoration
 import com.example.banco_lufaga.pojo.Movimiento
 
 class MovementsActivity : AppCompatActivity() {
     private lateinit var movimientoAdapter: MovimientoAdapter
     private lateinit var linearLayoutManager: LinearLayoutManager
+    private lateinit var itemDecoration: DividerItemDecoration
+
 
     private lateinit var binding: ActivityMovementsBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,6 +33,7 @@ class MovementsActivity : AppCompatActivity() {
         binding = ActivityMovementsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         linearLayoutManager = LinearLayoutManager(this)
+        itemDecoration = DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
 
         val cuentas: ArrayList<Cuenta> = mbo?.getCuentas(cliente) as ArrayList<Cuenta>
         val adapterSpinner = ArrayAdapter(this, android.R.layout.simple_spinner_item, cuentas)
@@ -44,6 +48,7 @@ class MovementsActivity : AppCompatActivity() {
                     layoutManager = linearLayoutManager
                     movimientoAdapter = MovimientoAdapter(mbo.getMovimientos(selectedItem) as ArrayList<Movimiento>)
                     adapter = movimientoAdapter
+                    addItemDecoration(itemDecoration)
                 }
             }
 
