@@ -1,4 +1,4 @@
-package com.example.banco_lufaga
+package com.example.banco_lufaga.activities
 
 import android.os.Bundle
 import android.widget.Toast
@@ -6,6 +6,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.banco_lufaga.R
 import com.example.banco_lufaga.bd.MiBancoOperacional
 import com.example.banco_lufaga.databinding.ActivityChangePasswordBinding
 import com.example.banco_lufaga.pojo.Cliente

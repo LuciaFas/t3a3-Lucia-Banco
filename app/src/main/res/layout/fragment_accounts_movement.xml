@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".activities.MovementsActivity">
+    android:layout_height="match_parent">
 
     <TextView
         android:layout_width="wrap_content"
@@ -23,32 +22,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/seleccionaCuenta"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/movimientos"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/selecciona_la_cuenta">
-
-    </TextView>
-
-    <Spinner
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/sp_cuentas_mov"
-        app:layout_constraintTop_toBottomOf="@+id/seleccionaCuenta"
-        app:layout_constraintStart_toStartOf="@+id/seleccionaCuenta"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="15dp">
-
-    </Spinner>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/txtMovimientos"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sp_cuentas_mov"
+        app:layout_constraintTop_toBottomOf="@+id/movimientos"
         android:layout_marginStart="16dp"
         android:layout_marginTop="25dp"
         android:text="@string/ultimos_movimientos">

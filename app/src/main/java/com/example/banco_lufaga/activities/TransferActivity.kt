@@ -1,17 +1,17 @@
-package com.example.banco_lufaga
+package com.example.banco_lufaga.activities
 
 import android.os.Bundle
 import android.view.View
-import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.banco_lufaga.R
 import com.example.banco_lufaga.bd.MiBancoOperacional
-import com.example.banco_lufaga.databinding.ActivityMainBinding
 import com.example.banco_lufaga.databinding.ActivityTransferBinding
 import com.example.banco_lufaga.pojo.Cliente
 import com.example.banco_lufaga.pojo.Cuenta
@@ -88,8 +88,16 @@ class TransferActivity : AppCompatActivity() {
                 justificante = "No enviar justificante"
             }
 
-            Toast.makeText(this@TransferActivity, "Cuenta origen: $cuentaSel \n$tipoCuenta $cuenta \n" +
-                    "Importe: $importe$tipoImporte \n$justificante", Toast.LENGTH_LONG).show()
+            var toastPersonalizado = Toast(applicationContext)
+            var inflater = layoutInflater
+            var layout = inflater.inflate(R.layout.toast_layout, findViewById(R.id.toastLayout))
+            val txtMsg = layout.findViewById<TextView>(R.id.txtToast)
+            txtMsg.text = "Cuenta origen: $cuentaSel \n$tipoCuenta $cuenta \n" +
+                    "Importe: $importe$tipoImporte \n$justificante"
+            toastPersonalizado.duration = Toast.LENGTH_LONG
+            toastPersonalizado.view = layout
+            toastPersonalizado.show()
+
         }
 
         enableEdgeToEdge()

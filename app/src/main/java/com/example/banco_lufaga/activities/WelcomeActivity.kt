@@ -1,4 +1,4 @@
-package com.example.banco_lufaga
+package com.example.banco_lufaga.activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,6 +9,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.banco_lufaga.databinding.ActivityWelcomeBinding
 import com.airbnb.lottie.LottieAnimationView
 import com.airbnb.lottie.LottieDrawable
+import com.example.banco_lufaga.R
 
 class WelcomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityWelcomeBinding

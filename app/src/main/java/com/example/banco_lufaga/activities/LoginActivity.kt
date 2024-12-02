@@ -1,4 +1,4 @@
-package com.example.banco_lufaga
+package com.example.banco_lufaga.activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,6 +8,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.banco_lufaga.R
 import com.example.banco_lufaga.databinding.ActivityLoginBinding
 import com.example.banco_lufaga.bd.MiBancoOperacional
 import com.example.banco_lufaga.pojo.Cliente
