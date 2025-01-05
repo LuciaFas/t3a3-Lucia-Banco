@@ -17,6 +17,9 @@ class GlobalPositionDetailsActivity : AppCompatActivity() {
         binding = ActivityGlobalPositionDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
+
+
         val cuenta = intent.getSerializableExtra("Cuenta") as Cuenta
         val frgMovimiento: AccountsMovementFragment =
             AccountsMovementFragment.newInstance(cuenta)
