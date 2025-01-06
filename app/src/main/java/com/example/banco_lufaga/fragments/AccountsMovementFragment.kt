@@ -54,9 +54,17 @@ class AccountsMovementFragment : Fragment(), OnClickListener {
         val mbo: MiBancoOperacional? = MiBancoOperacional.getInstance(context)
 
         var cuenta = arguments?.getSerializable("Cuenta")
+        var tipoCuenta = arguments?.getSerializable("TipoCuenta")
+
         if (cuenta != null) {
             cuenta = cuenta as Cuenta
-            movementsAdapter = MovementsAdapter(mbo?.getMovimientos(cuenta) as ArrayList<Movimiento>, this)
+
+            when (tipoCuenta) {
+                "zero" -> movementsAdapter = MovementsAdapter(mbo?.getMovimientosTipo(cuenta, 0) as ArrayList<Movimiento>, this)
+                "one" -> movementsAdapter = MovementsAdapter(mbo?.getMovimientosTipo(cuenta, 1) as ArrayList<Movimiento>, this)
+                "two" -> movementsAdapter = MovementsAdapter(mbo?.getMovimientosTipo(cuenta, 2) as ArrayList<Movimiento>, this)
+                else -> movementsAdapter = MovementsAdapter(mbo?.getMovimientos(cuenta) as ArrayList<Movimiento>, this)
+            }
 
             binding.recyclerMovimientos.apply {
                 layoutManager = linearLayoutManager

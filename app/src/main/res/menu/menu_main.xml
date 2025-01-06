@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+    <group
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="@string/home"/>
+        <item
+            android:id="@+id/nav_posglobal"
+            android:icon="@drawable/ic_wifi"
+            android:title="@string/posicion_global"/>
+        <item
+            android:id="@+id/nav_movimientos"
+            android:icon="@drawable/ic_movimiento"
+            android:title="@string/movimientos"/>
+        <item
+            android:id="@+id/nav_transferencias"
+            android:icon="@drawable/ic_trans"
+            android:title="@string/transferencias"/>
+        <item
+            android:id="@+id/nav_contrasenya"
+            android:icon="@drawable/ic_edit"
+            android:title="@string/cambiar_contrasenya"/>
+        <item
+            android:id="@+id/nav_promociones"
+            android:icon="@drawable/ic_dinero"
+            android:title="@string/promociones"/>
+        <item
+            android:id="@+id/nav_cajeros"
+            android:icon="@drawable/ic_map"
+            android:title="@string/cajeros"/>
+        <item
+            android:id="@+id/nav_config"
+            android:icon="@drawable/ic_settings"
+            android:title="@string/configuracion"/>
+    </group>
+
+    <item
+        android:title="">
+        <menu>
+            <item
+                android:id="@+id/nav_salir"
+                android:icon="@drawable/ic_salir"
+                android:title="@string/logout"/>
+        </menu>
+    </item>
+
+</menu>

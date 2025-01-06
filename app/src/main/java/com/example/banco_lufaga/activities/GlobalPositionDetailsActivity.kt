@@ -17,15 +17,68 @@ class GlobalPositionDetailsActivity : AppCompatActivity() {
         binding = ActivityGlobalPositionDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
-
-
         val cuenta = intent.getSerializableExtra("Cuenta") as Cuenta
         val frgMovimiento: AccountsMovementFragment =
             AccountsMovementFragment.newInstance(cuenta)
         supportFragmentManager.beginTransaction()
             .replace(R.id.contenedorMovimientos, frgMovimiento)
             .commit()
+
+
+        binding.bottomNavigation.setOnNavigationItemSelectedListener {
+            it.isChecked = true
+
+            val fragment: AccountsMovementFragment
+            when (it.itemId) {
+                R.id.nav_all -> {
+                    fragment = AccountsMovementFragment.newInstance(cuenta)
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.contenedorMovimientos, fragment)
+                        .commit()
+                }
+
+                R.id.nav_zero -> {
+                    fragment = AccountsMovementFragment().apply {
+                        arguments = Bundle().apply {
+                            putString("TipoCuenta", "zero")
+                            putSerializable("Cuenta", cuenta)
+                        }
+                    }
+
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.contenedorMovimientos, fragment)
+                        .commit()
+                }
+
+                R.id.nav_one -> {
+                    fragment = AccountsMovementFragment().apply {
+                        arguments = Bundle().apply {
+                            putString("TipoCuenta", "one")
+                            putSerializable("Cuenta", cuenta)
+                        }
+                    }
+
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.contenedorMovimientos, fragment)
+                        .commit()
+                }
+
+                R.id.nav_two -> {
+                    fragment = AccountsMovementFragment().apply {
+                        arguments = Bundle().apply {
+                            putString("TipoCuenta", "two")
+                            putSerializable("Cuenta", cuenta)
+                        }
+                    }
+
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.contenedorMovimientos, fragment)
+                        .commit()
+                }
+            }
+            false
+        }
+
 
         enableEdgeToEdge()
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->

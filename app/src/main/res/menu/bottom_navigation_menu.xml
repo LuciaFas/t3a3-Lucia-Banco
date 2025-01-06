@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_all"
+        android:title="@string/todos"
+        android:icon="@drawable/ic_all" />
+    <item
+        android:id="@+id/nav_zero"
+        android:title="@string/tipo_0"
+        android:icon="@drawable/ic_zero" />
+    <item
+        android:id="@+id/nav_one"
+        android:title="@string/tipo_1"
+        android:icon="@drawable/ic_one" />
+    <item
+        android:id="@+id/nav_two"
+        android:title="@string/tipo_2"
+        android:icon="@drawable/ic_two" />
+
+</menu>
