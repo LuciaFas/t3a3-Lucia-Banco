@@ -40,6 +40,20 @@
     <string name="tipo_0">Type 0</string>
     <string name="tipo_1">Type 1</string>
     <string name="tipo_2">Type 2</string>
+    <string name="musica_desc_off">Don\'t listen to music while the application is running</string>
+    <string name="musica_desc_on">Listen to music while the application is running</string>
+    <string name="video_desc_off">Don\'t play a video when starting the app</string>
+    <string name="musica">Music</string>
+    <string name="video_desc_on">Play a video when starting the app</string>
+    <string name="video">Welcome video</string>
+    <string name="multimedia">Media</string>
+    <string name="idioma">Language</string>
+    <string name="idioma_titulo">App language</string>
+    <string name="idioma_pref">Choose the app language</string>
+    <string name="datos">Data</string>
+    <string name="datos_title">Data origin</string>
+    <string name="datos_pref">Choose the data origin</string>
+    <string name="data">Local data</string>
     <string-array name="divisa">
         <item>$</item>
         <item>€</item>

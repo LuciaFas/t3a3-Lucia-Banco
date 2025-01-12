@@ -34,9 +34,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         drawerLayout = findViewById<DrawerLayout>(R.id.main)
 
-        val navigationView: NavigationView = findViewById(R.id.nav_menu)
-        navigationView.setNavigationItemSelectedListener(this)
-
         val toggle = ActionBarDrawerToggle(this, drawerLayout, toolBar, R.string.open_nav, R.string.close_nav)
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
@@ -45,6 +42,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         binding.txtview.text = binding.txtview.text.toString() + "\n " + cliente.getNombre()
 
+        val navigationView: NavigationView = findViewById(R.id.nav_menu)
+        navigationView.setNavigationItemSelectedListener(this)
         navigationView.setCheckedItem(R.id.nav_home)
 
         binding.btnVolver.setOnClickListener {
@@ -76,12 +75,15 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             startActivity(intent)
         }
 
-        enableEdgeToEdge()
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+        /*********************************************************************/
+        /* Este boton es temporal hasta que el navigation funcione */
+        binding.btnPromo.setOnClickListener {
+            val intent = Intent(this, SettingsActivity::class.java)
+            startActivity(intent)
         }
+        /*********************************************************************/
+
+
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
@@ -113,6 +115,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_transferencias -> {
                 val intent = Intent(this, TransferActivity::class.java)
                 intent.putExtra("Cliente", cliente)
+                startActivity(intent)
+            }
+            R.id.nav_config -> {
+                val intent = Intent(this, SettingsActivity::class.java)
                 startActivity(intent)
             }
             R.id.nav_salir -> {

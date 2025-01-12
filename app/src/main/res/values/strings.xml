@@ -47,4 +47,18 @@
         <item>£</item>
         <item>₩</item>
     </string-array>
+    <string name="musica_desc_off">No escuchar música mientras se ejecuta la aplicación</string>
+    <string name="musica_desc_on">Escuchar música mientras se ejecuta la aplicación</string>
+    <string name="video_desc_off">No reproducir un video al iniciar la aplicación</string>
+    <string name="musica">Música</string>
+    <string name="video_desc_on">Reproducir un video al iniciar la aplicación</string>
+    <string name="video">Video de Bienvenida</string>
+    <string name="multimedia">Multimedia</string>
+    <string name="idioma">Idioma</string>
+    <string name="idioma_titulo">Idioma de la aplicación</string>
+    <string name="idioma_pref">Indica que idioma quieres</string>
+    <string name="datos">Datos</string>
+    <string name="datos_title">Origen de los datos</string>
+    <string name="datos_pref">Indica el origen de los datos</string>
+    <string name="data">Datos locales</string>
 </resources>

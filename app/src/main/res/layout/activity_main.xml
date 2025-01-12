@@ -6,24 +6,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.MainActivity"
+    android:fitsSystemWindows="true"
     tools:openDrawer="start">
-
-    <com.google.android.material.navigation.NavigationView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:id="@+id/nav_menu"
-        android:layout_gravity="start"
-        app:headerLayout="@layout/menu_header"
-        app:menu="@menu/menu_main"
-        android:background="@color/white"
-        app:itemIconTint="@color/green"
-        app:itemTextColor="@color/green"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_marginTop="20dp">
+        android:orientation="vertical">
 
         <androidx.appcompat.widget.Toolbar
             app:layout_constraintTop_toTopOf="parent"
@@ -147,6 +136,17 @@
         </com.google.android.material.card.MaterialCardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/nav_menu"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/menu_header"
+        app:menu="@menu/menu_main"
+        android:backgroundTint="@color/white"
+        app:itemIconTint="@color/green"
+        app:itemTextColor="@color/green"/>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
