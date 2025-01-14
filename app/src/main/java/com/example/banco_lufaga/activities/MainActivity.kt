@@ -26,25 +26,37 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        drawerLayout = findViewById<DrawerLayout>(R.id.main)
+
 
         val toolBar = findViewById<Toolbar>(R.id.appbar)
         setSupportActionBar(toolBar)
 
-        drawerLayout = findViewById<DrawerLayout>(R.id.main)
 
-        val toggle = ActionBarDrawerToggle(this, drawerLayout, toolBar, R.string.open_nav, R.string.close_nav)
+        val navigationView: NavigationView = findViewById(R.id.nav_menu)
+        navigationView.setNavigationItemSelectedListener(this)
+        navigationView.setCheckedItem(R.id.nav_home)
+
+        val toggle = ActionBarDrawerToggle(
+            this,
+            drawerLayout,
+            toolBar,
+            R.string.open_nav,
+            R.string.close_nav
+        )
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
+
 
         cliente = intent.getSerializableExtra("Cliente") as Cliente
 
         binding.txtview.text = binding.txtview.text.toString() + "\n " + cliente.getNombre()
 
-        val navigationView: NavigationView = findViewById(R.id.nav_menu)
-        navigationView.setNavigationItemSelectedListener(this)
-        navigationView.setCheckedItem(R.id.nav_home)
+
 
         binding.btnVolver.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
@@ -87,40 +99,45 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        Log.d("MainActivity", "Item seleccionado: ${item.title}")
-        Toast.makeText(this, "Item seleccionado: ${item.title}", Toast.LENGTH_SHORT).show()
 
         when (item.itemId) {
 
             R.id.nav_home -> {
+                Log.d("MainActivity", "Item seleccionado:")
                 val intent = Intent(this, MainActivity::class.java)
                 intent.putExtra("Cliente", cliente)
                 startActivity(intent)
             }
+
             R.id.nav_contrasenya -> {
                 val intent = Intent(this, ChangePasswordActivity::class.java)
                 intent.putExtra("Cliente", cliente)
                 startActivity(intent)
             }
+
             R.id.nav_posglobal -> {
                 val intent = Intent(this, GlobalPositionActivity::class.java)
                 intent.putExtra("Cliente", cliente)
                 startActivity(intent)
             }
+
             R.id.nav_movimientos -> {
                 val intent = Intent(this, MovementsActivity::class.java)
                 intent.putExtra("Cliente", cliente)
                 startActivity(intent)
             }
+
             R.id.nav_transferencias -> {
                 val intent = Intent(this, TransferActivity::class.java)
                 intent.putExtra("Cliente", cliente)
                 startActivity(intent)
             }
+
             R.id.nav_config -> {
                 val intent = Intent(this, SettingsActivity::class.java)
                 startActivity(intent)
             }
+
             R.id.nav_salir -> {
                 finish()
             }

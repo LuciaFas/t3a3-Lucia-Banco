@@ -5,8 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.MainActivity"
     android:fitsSystemWindows="true"
+    tools:context=".activities.MainActivity"
     tools:openDrawer="start">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -14,54 +14,57 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+
         <androidx.appcompat.widget.Toolbar
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             android:id="@+id/appbar"
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:minHeight="?attr/actionBarSize"
+            android:layout_height="wrap_content"
             android:background="?attr/colorPrimary"
             android:elevation="4dp"
+            android:minHeight="?attr/actionBarSize"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
+
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardview_bienvenido"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/cardview_bienvenido"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/appbar"
-            app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:layout_marginTop="16dp">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/appbar">
 
             <ImageView
                 android:id="@+id/imagen"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:src="@drawable/perfil"
-                android:paddingBottom="6dp"
                 android:paddingStart="6dp"
                 android:paddingTop="6dp"
-                android:paddingEnd="6dp">
+                android:paddingEnd="6dp"
+                android:paddingBottom="6dp"
+                android:src="@drawable/perfil"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
             </ImageView>
+
             <TextView
+                android:id="@+id/txtview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/txtview"
+                android:layout_marginStart="150dp"
+                android:layout_marginTop="16dp"
                 android:text="@string/bienvenido"
                 android:textSize="20sp"
-                app:layout_constraintStart_toEndOf="@+id/imagen"
-                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginStart="150dp"
-                android:layout_marginTop="16dp">
+                app:layout_constraintStart_toEndOf="@+id/imagen"
+                app:layout_constraintTop_toTopOf="parent">
 
             </TextView>
 
@@ -70,94 +73,91 @@
         <com.google.android.material.card.MaterialCardView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/cardview_bienvenido"
-            app:layout_constraintStart_toStartOf="@+id/cardview_bienvenido"
+            android:layout_marginTop="32dp"
             app:layout_constraintEnd_toEndOf="@+id/cardview_bienvenido"
-            android:layout_marginTop="32dp">
+            app:layout_constraintStart_toStartOf="@+id/cardview_bienvenido"
+            app:layout_constraintTop_toBottomOf="@+id/cardview_bienvenido">
 
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
+                android:orientation="vertical"
                 android:padding="10dp">
+
                 <Button
+                    android:id="@+id/btnPosicion"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/posicion_global"
-                    android:id="@+id/btnPosicion"
                     android:layout_gravity="center_horizontal"
                     android:drawableLeft="@drawable/ic_wifi"
-                    android:drawableTint="@color/white"/>
+                    android:drawableTint="@color/white"
+                    android:text="@string/posicion_global" />
+
                 <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/movimientos"
                     android:id="@+id/btnMovimientos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/ic_movimiento"
-                    android:drawableTint="@color/white"/>
+                    android:drawableTint="@color/white"
+                    android:text="@string/movimientos" />
+
                 <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/transferencias"
                     android:id="@+id/btnTransferencias"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/ic_trans"
-                    android:drawableTint="@color/white"/>
+                    android:drawableTint="@color/white"
+                    android:text="@string/transferencias" />
+
                 <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/cambiar_contrasenya"
                     android:id="@+id/btnCambContr"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/ic_edit"
-                    android:drawableTint="@color/white"/>
+                    android:drawableTint="@color/white"
+                    android:text="@string/cambiar_contrasenya" />
+
                 <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/promociones"
                     android:id="@+id/btnPromo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/ic_dinero"
-                    android:drawableTint="@color/white"/>
+                    android:drawableTint="@color/white"
+                    android:text="@string/promociones" />
+
                 <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/cajeros"
                     android:id="@+id/btnCajero"
-                    android:drawableLeft="@drawable/ic_map"
-                    android:drawableTint="@color/white"/>
-                <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/salir"
+                    android:drawableLeft="@drawable/ic_map"
+                    android:drawableTint="@color/white"
+                    android:text="@string/cajeros" />
+
+                <Button
                     android:id="@+id/btnVolver"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/ic_salir"
-                    android:drawableTint="@color/white"/>
+                    android:drawableTint="@color/white"
+                    android:text="@string/salir" />
             </LinearLayout>
 
         </com.google.android.material.card.MaterialCardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <com.google.android.material.navigation.NavigationView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:id="@+id/nav_menu"
-        android:layout_gravity="start"
-        app:headerLayout="@layout/menu_header"
-        app:menu="@menu/menu_main"
-        android:backgroundTint="@color/white"
-        app:itemIconTint="@color/green"
-        app:itemTextColor="@color/green"/>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/navigationBar"
+            style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/navigationBar"
             android:layout_gravity="bottom"
-            style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
             app:navigationIcon="@drawable/ic_menu"
             app:navigationIconTint="@android:color/white">
 
@@ -172,5 +172,15 @@
         </com.google.android.material.floatingactionbutton.FloatingActionButton>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:backgroundTint="@color/white"
+        app:headerLayout="@layout/menu_header"
+        app:itemIconTint="@color/green"
+        app:itemTextColor="@color/green"
+        app:menu="@menu/menu_main" />
 
 </androidx.drawerlayout.widget.DrawerLayout>
