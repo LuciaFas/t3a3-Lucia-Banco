@@ -87,15 +87,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             startActivity(intent)
         }
 
-        /*********************************************************************/
-        /* Este boton es temporal hasta que el navigation funcione */
-        binding.btnPromo.setOnClickListener {
-            val intent = Intent(this, SettingsActivity::class.java)
-            startActivity(intent)
-        }
-        /*********************************************************************/
-
-
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
