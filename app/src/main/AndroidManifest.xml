@@ -10,8 +10,18 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:name=".bd.CajeroApplication"
         android:theme="@style/MyTheme"
         tools:targetApi="31">
+        <activity
+            android:name=".activities.AtmFormActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.AtmListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.AtmManagementActivity"
+            android:exported="false" />
         <activity
             android:name=".activities.SettingsActivity"
             android:exported="false" />

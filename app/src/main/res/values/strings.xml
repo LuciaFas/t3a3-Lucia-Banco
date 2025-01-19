@@ -61,4 +61,9 @@
     <string name="datos_title">Origen de los datos</string>
     <string name="datos_pref">Indica el origen de los datos</string>
     <string name="data">Datos locales</string>
+    <string name="atm">CAJERO</string>
+    <string name="atm_list">LISTA DE CAJEROS</string>
+    <string name="atm_add">AÑADIR CAJERO</string>
+    <string name="atm_maps">MAPAS CAJEROS</string>
+    <string name="select_atm">Selecciona Cajero:</string>
 </resources>

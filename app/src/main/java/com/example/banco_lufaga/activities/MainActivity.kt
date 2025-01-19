@@ -87,6 +87,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             startActivity(intent)
         }
 
+        binding.btnCajero.setOnClickListener {
+            val intent = Intent(this, AtmManagementActivity::class.java)
+            intent.putExtra("Cliente", cliente)
+            startActivity(intent)
+        }
+
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
