@@ -41,13 +41,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         navigationView.setNavigationItemSelectedListener(this)
         navigationView.setCheckedItem(R.id.nav_home)
 
-        val toggle = ActionBarDrawerToggle(
-            this,
-            drawerLayout,
-            toolBar,
-            R.string.open_nav,
-            R.string.close_nav
-        )
+        val toggle = ActionBarDrawerToggle(this, drawerLayout, toolBar, R.string.open_nav, R.string.close_nav)
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
@@ -55,7 +49,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         cliente = intent.getSerializableExtra("Cliente") as Cliente
 
         binding.txtview.text = binding.txtview.text.toString() + "\n " + cliente.getNombre()
-
 
 
         binding.btnVolver.setOnClickListener {
@@ -88,9 +81,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
 
         binding.btnCajero.setOnClickListener {
-            val intent = Intent(this, AtmManagementActivity::class.java)
-            intent.putExtra("Cliente", cliente)
-            startActivity(intent)
+            if (cliente.getNif() == "11111111A") {
+                val intent = Intent(this, AtmManagementActivity::class.java)
+                intent.putExtra("Cliente", cliente)
+                startActivity(intent)
+            } else {
+                Toast.makeText(this, "No eres administrador. No puedes acceder a la gestión de cajeros", Toast.LENGTH_LONG).show()
+            }
         }
 
     }

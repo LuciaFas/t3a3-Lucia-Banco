@@ -66,4 +66,10 @@
     <string name="atm_add">AÑADIR CAJERO</string>
     <string name="atm_maps">MAPAS CAJEROS</string>
     <string name="select_atm">Selecciona Cajero:</string>
+    <string name="management_atm">Gestion Cajeros</string>
+    <string name="address">Direccion</string>
+    <string name="latitude">Latitud</string>
+    <string name="guardar">Guardar</string>
+    <string name="delete">Eliminar</string>
+    <string name="update">Actualizar</string>
 </resources>

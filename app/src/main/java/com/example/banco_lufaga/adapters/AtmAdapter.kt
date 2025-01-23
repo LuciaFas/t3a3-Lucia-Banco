@@ -9,7 +9,7 @@ import com.example.banco_lufaga.R
 import com.example.banco_lufaga.databinding.ItemListAtmBinding
 import com.example.banco_lufaga.pojo.CajeroEntity
 
-class AtmAdapter(private val cajeros: List<CajeroEntity>, /*private val listener: OnClickListener*/):
+class AtmAdapter(private val cajeros: List<CajeroEntity>, private val listener: OnClickListener):
     RecyclerView.Adapter<AtmAdapter.ViewHolder>() {
 
     private lateinit var context: Context
@@ -18,7 +18,7 @@ class AtmAdapter(private val cajeros: List<CajeroEntity>, /*private val listener
         val binding = ItemListAtmBinding.bind(view)
         fun setListener(cajero:CajeroEntity){
             binding.root.setOnClickListener {
-                /*listener.onClick(cajero)*/
+                listener.onClick(cajero)
             }
         }
     }
