@@ -100,6 +100,10 @@ class AtmFormActivity : AppCompatActivity() {
                         )
                         CajeroApplication.database.cajeroDao().addCajero(nuevoCajero)
                     }.start()
+
+                    val intent = Intent(this, AtmManagementActivity::class.java)
+                    intent.putExtra("Cliente", cliente)
+                    startActivity(intent)
                 } else {
                     Toast.makeText(this, "Los campos no pueden estar vacios", Toast.LENGTH_SHORT).show()
                 }

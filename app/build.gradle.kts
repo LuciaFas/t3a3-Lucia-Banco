@@ -41,6 +41,9 @@ android {
 
 dependencies {
 
+    val roomVersion = "2.6.1"
+    implementation("androidx.room:room-runtime:$roomVersion")
+    ksp("androidx.room:room-compiler:$roomVersion")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -54,10 +57,4 @@ dependencies {
     implementation("com.airbnb.android:lottie:6.5.2")
     implementation ("com.google.android.material:material:1.12.0")
     implementation ("androidx.preference:preference:1.2.0")
-    val roomVersion = "2.6.1"
-    implementation("androidx.room:room-runtime:$roomVersion")
-    ksp("androidx.room:room-compiler:$roomVersion")
-
-
-
 }
